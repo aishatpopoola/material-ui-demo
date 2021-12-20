@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+      display: 'block',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
   drawer: {
     width: drawerWidth,
@@ -55,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     overflowX: 'hidden',
-    width: theme.spacing(7) + 1,
+    width: 0,
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing(9) + 1,
     },
@@ -108,7 +112,7 @@ function App() {
                 aria-label="open drawer"
                 onClick={checkOpenOrClose}
                 edge="start"
-                className="mobile-toggle-button"
+                className={clsx(classes.menuButton)}
               >
                 <MenuIcon />
               </IconButton>
