@@ -28,25 +28,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+    zIndex: 1250,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
   menuButton: {
     marginRight: 36,
-  },
-  hide: {
-    display: 'none',
   },
   drawer: {
     width: drawerWidth,
@@ -97,26 +86,29 @@ function App() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const checkOpenOrClose = () => {
+    if (open) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
         <div className={classes.root}>
           <CssBaseline />
           <AppBar
             position="fixed"
-            className={clsx(classes.appBar, {
-              [classes.appBarShift]: open,
-            })}
+            style={{zIndex: 1250}}
           >
             <Toolbar>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                onClick={handleDrawerOpen}
+                onClick={checkOpenOrClose}
                 edge="start"
-                className={clsx(classes.menuButton, {
-                  [classes.hide]: open,
-                })}
+                className="mobile-toggle-button"
               >
                 <MenuIcon />
               </IconButton>
@@ -126,6 +118,8 @@ function App() {
             </Toolbar>
           </AppBar>
           <Drawer
+            onMouseEnter={handleDrawerOpen}
+            onMouseLeave={handleDrawerClose}
             variant="permanent"
             className={clsx(classes.drawer, {
               [classes.drawerOpen]: open,
@@ -163,7 +157,6 @@ function App() {
             </List>
           </Drawer>
         </div>
-      </header>
     </div>
   );
 }
