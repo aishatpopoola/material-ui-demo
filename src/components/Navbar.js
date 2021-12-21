@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: 1250,
+    backgroundColor: "#fff !important",
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -43,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: "nowrap",
+    backgroundColor: theme.palette.primary.main
   },
   drawerOpen: {
     width: drawerWidth,
