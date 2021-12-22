@@ -3,3 +3,22 @@ body {
   margin: 0;
   font-size: 14px;
 }
+
+.page-wrapper {
+  margin-top: 150px;
+  margin-left: 80px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
