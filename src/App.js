@@ -8,31 +8,32 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
+import ChangePasswordModal from "./components/ChangePasswordModal";
 
 const changeTheme = (theme) => {
-  let mainPrimaryColor = '#1B54EB';
+  let mainPrimaryColor = "#1B54EB";
 
-  if (theme === 'grey-scale') {
-    mainPrimaryColor = '#12122B';
+  if (theme === "grey-scale") {
+    mainPrimaryColor = "#12122B";
   }
 
-  return createTheme({ 
+  return createTheme({
     palette: {
       primary: {
         main: mainPrimaryColor,
       },
     },
-  })
-}
+  });
+};
 
 function App() {
-  const [themeValue, setThemeValue] = React.useState('');
+  const [themeValue, setThemeValue] = React.useState("default");
   const handleRadioChange = (event) => {
     setThemeValue(event.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(themeValue)
+    console.log(themeValue);
   };
   return (
     <ThemeProvider theme={changeTheme(themeValue)}>
@@ -63,6 +64,7 @@ function App() {
                 </RadioGroup>
               </FormControl>
             </form>
+            <ChangePasswordModal />
           </div>
         </div>
       </div>

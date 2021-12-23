@@ -13,6 +13,14 @@ body {
   max-width: 800px;
 }
 
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.mr-10 {
+  margin-right: 10px !important;
+}
+
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -21,4 +29,9 @@ body {
 .my-auto {
   margin-top: auto !important;
   margin-bottom: auto !important;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
 }
