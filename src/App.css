@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  background-color: #fff !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-wrapper {
+  margin-top: 150px;
+  margin-left: 80px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  max-width: 1000px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.mr-10 {
+  margin-right: 10px !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.form-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.tabsHeader {
+  margin-bottom: 70px;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff !important;
+}
+
+.MuiTabs-flexContainer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tabButton {
+  min-height: 51px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drawerNavs {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drawerBottomNavs {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
