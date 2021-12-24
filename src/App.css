@@ -53,3 +53,14 @@ body {
   min-height: 51px;
   width: 100%;
 }
+
+.drawerNavs {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drawerBottomNavs {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}

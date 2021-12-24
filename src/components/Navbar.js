@@ -2,7 +2,6 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-// import Button from '@material-ui/core/Button';
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
@@ -10,7 +9,6 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Divider from "@material-ui/core/Divider";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
@@ -27,11 +25,10 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: 1250,
-    backgroundColor: "#fff !important",
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+    backgroundColor: "#fff",
+    color: "#555",
+    borderBottom: "1px solid rgb(238, 238, 240)",
+    boxShadow: "none",
   },
   menuButton: {
     marginRight: 36,
@@ -44,7 +41,9 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: "nowrap",
-    backgroundColor: theme.palette.primary.main
+    "& > div": {
+      backgroundColor: theme.palette.primary.main,
+    },
   },
   drawerOpen: {
     width: drawerWidth,
@@ -102,7 +101,7 @@ function Navbar() {
     <div>
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position="fixed" style={{ zIndex: 1250 }}>
+        <AppBar position="fixed" className={clsx(classes.appBar)}>
           <Toolbar>
             <IconButton
               color="inherit"
@@ -142,28 +141,42 @@ function Navbar() {
               )}
             </IconButton>
           </div>
-          <Divider />
-          <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+          <div className="drawerNavs">
+            <div className="drawerTopNavs">
+              <List>
+                {["Inbox", "Starred", "Send email", "Drafts"].map(
+                  (text, index) => (
+                    <ListItem style={{ color: "#fff" }} button key={text}>
+                      <ListItemIcon>
+                        {index % 2 === 0 ? (
+                          <InboxIcon style={{ fill: "#fff" }} />
+                        ) : (
+                          <MailIcon style={{ fill: "#fff" }} />
+                        )}
+                      </ListItemIcon>
+                      <ListItemText primary={text} />
+                    </ListItem>
+                  )
+                )}
+              </List>
+            </div>
+            <div className="drawerBottomNavs">
+              <List>
+                {["All mail", "Trash", "Spam"].map((text, index) => (
+                  <ListItem style={{ color: "#fff" }} button key={text}>
+                    <ListItemIcon>
+                      {index % 2 === 0 ? (
+                        <InboxIcon style={{ fill: "#fff" }} />
+                      ) : (
+                        <MailIcon style={{ fill: "#fff" }} />
+                      )}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
+              </List>
+            </div>
+          </div>
         </Drawer>
       </div>
     </div>
