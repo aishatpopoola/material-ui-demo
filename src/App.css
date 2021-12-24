@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
+  background-color: #fff !important;
 }
 
 .page-wrapper {
@@ -10,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .mb-10 {
@@ -34,4 +35,21 @@ body {
 .form-section {
   display: flex;
   flex-direction: column;
+}
+
+.tabsHeader {
+  margin-bottom: 70px;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff !important;
+}
+
+.MuiTabs-flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.tabButton {
+  min-height: 51px;
+  width: 100%;
 }
